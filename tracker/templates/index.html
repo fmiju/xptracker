@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>User story and task tracker</h2>
+
+Developer: {{ devName }}
+<br>
+{% for i in devsWork %}
+	<table border=1 width=600>
+	<tr>
+	<td> {{ i.story.value }} <td>
+	</tr>
+
+	<tr>
+	<td width=400>Task</td>
+	<td>Estimation</td>
+	<td>Real time</td>
+	</tr>
+	{% for task in i.tasks %}
+		<tr>
+		<td>{{ task.value }}</td>
+		<td>{{ task.estTime }}</td>
+		<td>{{ task.realTime }}</td>
+		</tr>
+	{% endfor %}
+	</table>
+	<br>
+{% endfor %}
+
+
+{% endblock %}

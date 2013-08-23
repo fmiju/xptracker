@@ -16,6 +16,7 @@ class Story(models.Model):
 class Task(models.Model):
 	value = models.CharField(max_length=255)
 	estTime = models.IntegerField(default=0)
+	realTime = models.IntegerField(default=0)
 	developer = models.ForeignKey(Developer)
 	iteration = models.CharField(max_length=STR_LENGTH)
 	story = models.ForeignKey(Story)
