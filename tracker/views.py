@@ -1,11 +1,12 @@
 from tracker.models import *
 from django.http import HttpResponse
 from django.template import RequestContext, loader
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 
 def index(request):
-	#devs = Developer.objects.get(name='Anna Squid')	
-	n = 'Britta Helgesson'
+	
+	if 'dname' in request.GET:
+		n = request.GET['dname']
 	dev = Developer.objects.get(name=n)
 	tasks = Task.objects.filter(developer=dev)
 	stories = Story.objects.all()
@@ -20,6 +21,13 @@ def index(request):
 		'devsWork': devsWork
 	}
 	return render(request, 'index.html', context)
+
+def pickDeveloper(request):
+	context = {
+		'names': Developer.objects.all()
+	}
+	return render(request, 'pick_dev.html', context)
+
 
 def storyTime(s):
 	storiesTasks = Task.objects.filter(story=s)

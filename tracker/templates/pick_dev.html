@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Choose developer</title>
+</head>
+<body>
+<form action="/tracker/view" method="get">
+<select name="dname">
+	<option> --choose developer-- </option>
+	{% for nm in names %}
+		<option value="{{ nm }}"> {{ nm }} </option>
+	{% endfor %}
+</select>
+
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
