@@ -1,7 +1,6 @@
 xptracker
 =========
--- to try it out: --
-git 
+ to try it out: 
 cd path/to/xptracker
 sudo python manage.py runserver
 in browser, open: 127.0.0.1:8000/tracker/select/
