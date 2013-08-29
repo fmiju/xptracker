@@ -15,7 +15,7 @@ def index(request):
 	for s in stories:
 		devTasks = tasks.filter(story=s)
 		if devTasks:
-			devsWork.append({'story':s, 'time':storyTime(s), 'tasks':devTasks})
+			devsWork.append({'story':s, 'time':storyTime(devTasks), 'tasks':devTasks})
 	context = {
 		'devName': n,
 		'devsWork': devsWork
@@ -29,10 +29,9 @@ def pickDeveloper(request):
 	return render(request, 'pick_dev.html', context)
 
 
-def storyTime(s):
-	storiesTasks = Task.objects.filter(story=s)
+def storyTime(devTasks):
 	time = 0
-	for t in storiesTasks:
+	for t in devTasks:
 		time += t.realTime
 	return time
 

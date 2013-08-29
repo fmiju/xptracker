@@ -2,31 +2,34 @@
 
 {% block content %}
 
-<h2>User story and task tracker</h2>
-
-Developer: {{ devName }}
-<br>
+Developer:
+<b> {{ devName }}</b>
+<br><br>
+<table border="1", bordercolor="#7bc663", cellspacing=0>
+<tr><td>
+<table width="650", cellpadding="5", cellspacing="0">
 {% for i in devsWork %}
-	<table border=1 width=600>
-	<tr>
-	<td> {{ i.story.value }} <td>
-	</tr>
-
-	<tr>
-	<td width=400>Task</td>
+	<tr bgcolor="#7bc663">
+	<td width="450"> {{ i.story.value }} </td>
 	<td>Estimation</td>
 	<td>Real time</td>
+	</tr>
+
+	<tr bgcolor="#d4e7d4">
+	<td width="400"></td>
+	<td align="center">{{ i.story.estTime }}</td>
+	<td align="center">{{ i.time }}</td>
 	</tr>
 	{% for task in i.tasks %}
 		<tr>
 		<td>{{ task.value }}</td>
-		<td>{{ task.estTime }}</td>
-		<td>{{ task.realTime }}</td>
+		<td align="center">{{ task.estTime }}</td>
+		<td align="center">{{ task.realTime }}</td>
 		</tr>
 	{% endfor %}
-	</table>
-	<br>
 {% endfor %}
-
+</table>
+</tr></td>
+</table>
 
 {% endblock %}

@@ -1,8 +1,5 @@
-<html>
-<head>
-<title>Choose developer</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
 <form action="/tracker/view" method="get">
 <select name="dname">
 	<option> --choose developer-- </option>
@@ -13,6 +10,4 @@
 
 <input type="submit" value="Submit">
 </form>
-</body>
-</html>
-
+{% endblock %}
