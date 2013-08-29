@@ -1,6 +1,6 @@
 xptracker
 =========
-*** to try it out: ***
+-- to try it out: --
 git 
 cd path/to/xptracker
 sudo python manage.py runserver
