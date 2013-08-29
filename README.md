@@ -1,6 +1,6 @@
 xptracker
 =========
-You pick a developer from a list. The system displays stories and tasks the developer has been working on, 
+So you pick a developer from a list, and the system displays stories and tasks the developer has been working on, 
 also estimated and actual times for each task. <br>
 ** to try it out: ** <br>
 cd path/to/xptracker <br>
