@@ -5,7 +5,7 @@ also estimated and actual times for each task. <br>
 ** to try it out: ** <br>
 git clone git://github.com/fmiju/xptracker.git <br>
 cd xptracker <br>
-sudo python manage.py runserver <br>
+python manage.py runserver <br>
 in browser, open 127.0.0.1:8000/tracker/select/ <br>
 
 Versions used:
